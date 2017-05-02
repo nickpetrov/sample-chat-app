@@ -4,15 +4,16 @@
   angular
     .module('chatApps')
     .config(function($stateProvider, $urlRouterProvider) {
-
       $stateProvider
         .state('login', {
           url: '/login',
-          templateUrl: '/templates/login.html'
+          templateUrl: '/templates/login.html',
+          controller: 'LoginController as vm'
         })
         .state('chat', {
-          url: '/chat',
-          templateUrl: '/templates/chat.html'
+          url: '/',
+          templateUrl: '/templates/chat.html',
+          controller: 'ChatController as vm'
         });
 
       $urlRouterProvider.otherwise('/login');

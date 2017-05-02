@@ -1,1 +1,10 @@
-chat.html
+<button ng-click="vm.logout()">Logout</button>
+<div ng-hide="vm.chatContent.length === 0" >
+	<div ng-repeat="line in vm.chatContent track by $index">
+		<div id="line.id"><image ng-src="{{line.user.avatar}}"></image> {{ line.user.name }} | {{ line.time }} | {{ line.msg }}</div>
+	</div>
+</div>
+<form name="msgForm" ng-submit="vm.send()">
+	<textarea name='msg' ng-model="vm.msgBox.msg"></textarea>
+	<input type="submit">
+</form>
